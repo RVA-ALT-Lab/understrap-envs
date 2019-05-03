@@ -277,8 +277,11 @@ function bannerMaker(){
 //CUSTOMIZER PAGE
 
 $args = array(
-  'page_title' => 'Portfolio Options',
-  'position' => 2,
+  'page_title'=>'Portfolio Options',
+  'menu_title'=>'Portfolio Options',    
+  'menu_slug'=>'portfolio-options',
+  'redirect'=>true,
+  'position' => '1.01',
   'capability' => 'edit_posts',
   'icon_url' => 'dashicons-universal-access-alt',
   );
@@ -353,3 +356,17 @@ function load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
+// Rearrange the admin menu
+function custom_menu_order($menu_ord) {
+    if (!$menu_ord) return true;
+     
+    return array(
+        'admin.php?page=acf-options-portfolio-options',
+        'edit.php?post_type=page', // Pages
+        //'separator1', // First separator
+        // 'edit.php', // Posts
+        // 'upload.php', // Media        
+    );
+}
+add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
+add_filter('menu_order', 'custom_menu_order');
