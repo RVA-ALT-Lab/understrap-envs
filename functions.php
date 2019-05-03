@@ -281,7 +281,7 @@ $args = array(
   'menu_title'=>'Portfolio Options',    
   'menu_slug'=>'portfolio-options',
   'redirect'=>true,
-  'position' => '10.001',
+  'position' => '0.001',
   'capability' => 'edit_posts',
   'icon_url' => 'dashicons-universal-access-alt',
   );
@@ -320,6 +320,7 @@ function remove_menus() {
     remove_menu_page( 'users.php' );                  //Users
     remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page( 'edit-comments.php' );        //comments
+    remove_menu_page( 'upload.php' );        //media - can always get there through editor?
   }
 }
 add_action( 'admin_menu', 'remove_menus' );
@@ -355,18 +356,3 @@ function load_custom_wp_admin_style() {
         wp_enqueue_style( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
-
-// Rearrange the admin menu
-function custom_menu_order($menu_ord) {
-    if (!$menu_ord) return true;
-     
-    return array(
-        //'separator1', // First separator
-        //'admin.php?page=portfolio-options',
-        'edit.php?post_type=page', // Pages
-        'edit.php', // Posts
-        'upload.php', // Media        
-    );
-}
-add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
-add_filter('menu_order', 'custom_menu_order');
