@@ -303,11 +303,23 @@ function my_acf_json_save_point( $path ) {
 
 //purify backend
 function remove_menus() {
-  remove_menu_page( 'index.php' );                  //Dashboard
-  remove_menu_page( 'jetpack' );                    //Jetpack* 
-  //remove_menu_page( 'themes.php' );                 //Appearance
-  remove_menu_page( 'plugins.php' );                //Plugins
-  remove_menu_page( 'users.php' );                  //Users
-  remove_menu_page( 'options-general.php' );        //Settings
+  if (!is_super_admin()){
+    remove_menu_page( 'index.php' );                  //Dashboard
+    remove_menu_page( 'jetpack' );                    //Jetpack* 
+    remove_menu_page( 'themes.php' );                 //Appearance
+    remove_menu_page( 'plugins.php' );                //Plugins
+    remove_menu_page( 'users.php' );                  //Users
+    remove_menu_page( 'options-general.php' );        //Settings
+    remove_menu_page( 'edit-comments.php' );        //comments
+  }
 }
 add_action( 'admin_menu', 'remove_menus' );
+
+//hide acf from sidebar if not super admin
+add_filter('acf/settings/show_admin', 'my_acf_show_admin');
+
+function my_acf_show_admin( $show ) {
+    
+    return is_super_admin();
+    
+}

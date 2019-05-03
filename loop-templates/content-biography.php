@@ -13,7 +13,12 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 	</header><!-- .entry-header -->
+	<?php 
+	$junk = get_field('profile_picture', 'option');
+	 print("<pre>".print_r($junk,true)."</pre>");
+	 print("<pre>".print_r($junk["sizes"]["large"],true)."</pre>");
 
+	?>
 	<div class="row entry-content">
 		<div class="col-md-8 entry-content">
 			<?php if (get_field('bio_question_2', 'option')):?>			
