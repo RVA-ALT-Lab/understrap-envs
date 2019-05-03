@@ -242,6 +242,26 @@ function acf_fetch_cv_name(){
     }
 }
 
+function acf_fetch_cv_skills_data(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_skills');
+  
+    if($rows)
+    {
+      echo '<ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<li>' . $row['type_of_skill'] . '</li>';
+      }
+
+      echo '</ul>';
+    }
+
+}
+
+
 function bannerMaker(){
 	global $post;
 	 if ( get_the_post_thumbnail_url( $post->ID ) ) {
