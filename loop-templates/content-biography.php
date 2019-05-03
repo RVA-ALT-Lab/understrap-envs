@@ -16,14 +16,20 @@
 
 	<div class="row entry-content">
 		<div class="col-md-8 entry-content">
-			<div class="envs-prompt"><h2>Who am I, and where am I from?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_one();?></div>
+			<?php if (get_field('bio_question_2', 'option')):?>			
+				<div class="envs-prompt"><h2>Who am I, and where am I from?</h2></div>
+				<div class="envs-response"><?php echo get_field('bio_question_1', 'option');?></div>
+			<?php endif;?>	
 
-			<div class="envs-prompt"><h2>What does Sustainability mean to me?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_two();?></div>
+			<?php if (get_field('bio_question_2', 'option')):?>
+				<div class="envs-prompt"><h2>What does Sustainability mean to me?</h2></div>
+				<div class="envs-response"><?php echo get_field('bio_question_2', 'option');?></div>
+			<?php endif;?>	
 
-			<div class="envs-prompt"><h2>How do I plan to innovate a more sustainable future?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_three();?></div>
+			<?php if (get_field('bio_question_3', 'option')):?>
+				<div class="envs-prompt"><h2>How do I plan to innovate a more sustainable future?</h2></div>
+				<div class="envs-response"><?php echo get_field('bio_question_3', 'option');?></div>
+			<?php endif;?>
 			
 			<?php the_content(); ?>
 

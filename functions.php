@@ -254,6 +254,15 @@ function bannerMaker(){
     } 
 }
 
+//CUSTOMIZER PAGE
+
+$args = array(
+  'page_title' => 'Portfolio Options',
+  );
+
+acf_add_options_page( $args );
+
+
 
 
 //ACF JSON SAVER
