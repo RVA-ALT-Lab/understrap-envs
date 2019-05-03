@@ -23,7 +23,7 @@
 			<div class="envs-response"><?php echo acf_fetch_cv_interests();?></div>
 
 			<div class="envs-prompt"><h2>Skills</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_cv_skills();?></div>
+			<div class="envs-response"><?php acf_fetch_cv_skills_data();?></div>
 
 			<div class="envs-prompt"><h2>Academics</h2></div>
 			<div class="envs-response"><?php echo acf_fetch_cv_academics();?></div>
