@@ -305,7 +305,7 @@ function my_acf_json_save_point( $path ) {
 function remove_menus() {
   remove_menu_page( 'index.php' );                  //Dashboard
   remove_menu_page( 'jetpack' );                    //Jetpack* 
-  remove_menu_page( 'themes.php' );                 //Appearance
+  //remove_menu_page( 'themes.php' );                 //Appearance
   remove_menu_page( 'plugins.php' );                //Plugins
   remove_menu_page( 'users.php' );                  //Users
   remove_menu_page( 'options-general.php' );        //Settings
