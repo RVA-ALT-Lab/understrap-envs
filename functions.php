@@ -281,7 +281,7 @@ $args = array(
   'menu_title'=>'Portfolio Options',    
   'menu_slug'=>'portfolio-options',
   'redirect'=>true,
-  'position' => '1.01',
+  'position' => '10.001',
   'capability' => 'edit_posts',
   'icon_url' => 'dashicons-universal-access-alt',
   );
@@ -361,11 +361,11 @@ function custom_menu_order($menu_ord) {
     if (!$menu_ord) return true;
      
     return array(
-        'admin.php?page=acf-options-portfolio-options',
-        'edit.php?post_type=page', // Pages
         //'separator1', // First separator
-        // 'edit.php', // Posts
-        // 'upload.php', // Media        
+        //'admin.php?page=portfolio-options',
+        'edit.php?post_type=page', // Pages
+        'edit.php', // Posts
+        'upload.php', // Media        
     );
 }
 add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order

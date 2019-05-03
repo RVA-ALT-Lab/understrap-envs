@@ -3,3 +3,10 @@
 	background-color: red;
 	display: none;
 }
+
+
+/*prettier acf*/
+.acf-field .acf-label label {
+	font-size: 1.5em;
+	margin-top: 25px !important;	
+}
