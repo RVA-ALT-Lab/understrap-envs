@@ -139,54 +139,15 @@ if ( function_exists('register_sidebar') )
 
 
 //ACF stuff
+
 //Biography Page
+/* Now this done on the options page
+*/
 
-function acf_fetch_bio_question_one(){
-  global $post;
-  $html = '';
-  $bio_question_one = get_field('bio_question_one');
+//Options page
 
-    if( $bio_question_one) {      
-      $html = $bio_question_one;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_question_two(){
-  global $post;
-  $html = '';
-  $bio_question_two = get_field('bio_question_two');
-
-    if( $bio_question_two) {      
-      $html = $bio_question_two;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_question_three(){
-  global $post;
-  $html = '';
-  $bio_question_three = get_field('bio_question_three');
-
-    if( $bio_question_three) {      
-      $html = $bio_question_three;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_profile_picture(){
-  global $post;
-  $html = '';
-  $bio_profile_picture = get_field('bio_profile_picture');
-
-    if( $bio_profile_picture) {      
-      $html = $bio_profile_picture;
-     return '<img class="bio-profile-pic" src="'. $html .'">';    
-    }
-}
 
 //CV Page
-
 
 function acf_fetch_cv_interests(){
   global $post;
@@ -254,6 +215,25 @@ function acf_fetch_cv_skills_data(){
       foreach($rows as $row)
       {
         echo '<li>' . $row['type_of_skill'] . '</li>';
+      }
+
+      echo '</ul>';
+    }
+
+}
+
+function acf_fetch_cv_academic_data(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_academics');
+  
+    if($rows)
+    {
+      echo '<ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<li>Major(s) = ' . $row['majors'] . '</li>';
       }
 
       echo '</ul>';

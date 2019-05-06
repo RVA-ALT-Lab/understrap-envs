@@ -3,25 +3,6 @@
     "title": "Curriculum Vitae",
     "fields": [
         {
-            "key": "field_5ccb3a913790a",
-            "label": "Name",
-            "name": "cv_name",
-            "type": "text",
-            "instructions": "Enter your First and Lastname",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5ccb36d1c045d",
             "label": "Interests",
             "name": "cv_interests",
@@ -54,7 +35,7 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": 0,
+            "min": 1,
             "max": 0,
             "layout": "table",
             "button_label": "",
@@ -82,7 +63,7 @@
         },
         {
             "key": "field_5ccb36d1c048b",
-            "label": "Academics",
+            "label": "Academic Major (and Minor if applicable)",
             "name": "cv_academics",
             "type": "repeater",
             "instructions": "",
@@ -93,9 +74,9 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
+            "collapsed": "field_5ccc725a92c51",
+            "min": 1,
+            "max": 1,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -103,61 +84,6 @@
                     "key": "field_5ccc725a92c51",
                     "label": "Major(s)",
                     "name": "majors",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ccc72f0dd033",
-                    "label": "Minor",
-                    "name": "minor",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5ccc7358947b3",
-                    "label": "Expected graduation date",
-                    "name": "expected_graduation_date",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "d\/m\/Y",
-                    "first_day": 1
-                },
-                {
-                    "key": "field_5ccc7390947b4",
-                    "label": "Coursework",
-                    "name": "coursework",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -170,32 +96,13 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "row",
+                    "layout": "table",
                     "button_label": "",
                     "sub_fields": [
                         {
-                            "key": "field_5ccc73e9947b5",
-                            "label": "Course number",
-                            "name": "course_number",
-                            "type": "text",
-                            "instructions": "ex. ENVS 310",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ccc74c0947b6",
-                            "label": "Title",
-                            "name": "course_title",
+                            "key": "field_5ccc9fed634ac",
+                            "label": "Add your major(s) here by adding a row for each",
+                            "name": "other_major",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -210,30 +117,32 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
-                        },
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5ccc72f0dd033",
+                    "label": "Minor(s)",
+                    "name": "minors",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
                         {
-                            "key": "field_5ccc74d7947b7",
-                            "label": "Semester",
-                            "name": "course_semester",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ccc74ef947b8",
-                            "label": "Year",
-                            "name": "course_year",
+                            "key": "field_5ccca20815bdd",
+                            "label": "Add your minor(s) here by adding a row for each",
+                            "name": "other_minors",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -252,6 +161,129 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_5ccc7390947b4",
+            "label": "Coursework",
+            "name": "cv_coursework",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5ccc73e9947b5",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5ccc73e9947b5",
+                    "label": "Course number",
+                    "name": "course_number",
+                    "type": "text",
+                    "instructions": "ex. ENVS 310",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ccc74c0947b6",
+                    "label": "Course Title",
+                    "name": "course_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ccc74d7947b7",
+                    "label": "Semester",
+                    "name": "course_semester",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Fall": "Fall",
+                        "Spring": "Spring",
+                        "Summer": "Summer"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ccc74ef947b8",
+                    "label": "Year",
+                    "name": "course_year",
+                    "type": "number",
+                    "instructions": "ex. 2018",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 2001,
+                    "max": 2100,
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5ccc7358947b3",
+            "label": "Expected graduation date",
+            "name": "expected_graduation_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
         },
         {
             "key": "field_5ccb3baed7c53",
@@ -300,5 +332,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1556903357
+    "modified": 1556915632
 }

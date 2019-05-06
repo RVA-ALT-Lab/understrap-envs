@@ -36,14 +36,15 @@
 		</div><!-- .entry-content -->
 		<div class="col-md-4 entry-content">
 			<div class="bio-profile-box">
-				<?php echo acf_fetch_bio_profile_picture();?>
+				<img src="
+				<?php echo get_field('profile_picture', 'option')['sizes']['medium'];?>">
 			</div>
 		</div>
 	</div>
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php echo '<a href="wp-admin/admin.php?page=acf-options-portfolio-options"><span class="edit-link">Edit</a></span>'; ?>
 
 	</footer><!-- .entry-footer -->
 
