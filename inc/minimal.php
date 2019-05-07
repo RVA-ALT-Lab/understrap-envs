@@ -54,4 +54,4 @@ function load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 
-add_menu_page('Extras', 'Extras', 'can edit', 'extra-tools', 'extras_text_callback',  'dashicons-chart-pie', 100);
+add_menu_page('Extras', 'Extras', 'upload_files', 'extra-tools', 'extras_text_callback',  'dashicons-chart-pie', 100);
