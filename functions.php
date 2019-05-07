@@ -150,54 +150,15 @@ if ( function_exists('register_sidebar') )
 
 
 //ACF stuff
+
 //Biography Page
+/* Now this done on the options page
+*/
 
-function acf_fetch_bio_question_one(){
-  global $post;
-  $html = '';
-  $bio_question_one = get_field('bio_question_one');
+//Options page
 
-    if( $bio_question_one) {      
-      $html = $bio_question_one;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_question_two(){
-  global $post;
-  $html = '';
-  $bio_question_two = get_field('bio_question_two');
-
-    if( $bio_question_two) {      
-      $html = $bio_question_two;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_question_three(){
-  global $post;
-  $html = '';
-  $bio_question_three = get_field('bio_question_three');
-
-    if( $bio_question_three) {      
-      $html = $bio_question_three;  
-     return $html;    
-    }
-}
-
-function acf_fetch_bio_profile_picture(){
-  global $post;
-  $html = '';
-  $bio_profile_picture = get_field('bio_profile_picture');
-
-    if( $bio_profile_picture) {      
-      $html = $bio_profile_picture;
-     return '<img class="bio-profile-pic" src="'. $html .'">';    
-    }
-}
 
 //CV Page
-
 
 function acf_fetch_cv_interests(){
   global $post;
@@ -271,6 +232,72 @@ function acf_fetch_cv_skills_data(){
     }
 
 }
+
+function acf_fetch_cv_academic_major(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_academics');
+  
+    if($rows)
+    {
+      echo '<div class="majors"><ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<li>' . $row['majors'] . '</li>';
+      }
+
+      echo '</ul></div>';
+    }
+
+}
+
+function acf_fetch_cv_academic_minor(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_academics');
+  // print("<pre>".print_r($rows,true)."</pre>");
+
+  if($rows)
+    {
+      if($rows[0]['minors'])
+        
+        {
+          echo '<div class="minors"><h3>Minor</h3><ul>';
+        }
+
+      foreach($rows as $row)
+      {
+        if($row['minors'])
+          {
+          echo '<li>' . $row['minors'] . '</li>';
+          }
+      }
+
+      echo '</ul></div>';
+    }
+
+}
+
+function acf_fetch_cv_coursework_data(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_coursework');
+  
+    if($rows)
+    {
+      echo '<ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<li>' . $row['course_number'] . '</li>';
+      }
+
+      echo '</ul>';
+    }
+
+}
+
 
 
 function bannerMaker(){

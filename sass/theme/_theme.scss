@@ -57,8 +57,21 @@ article a {
 	text-decoration: underline;
 }
 
-body, p, h1, h2, h3, h4, h5 {
-	font-family: 'Roboto', sans-serif;
+body, p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cantata One', serif;
+}
+
+.highlight {
+  font-family: 'Open Sans',sans-serif;
+  background: #efefef;
+  box-shadow: 10px 0 0 #efefef,-40px 0 0 #efefef;
+  box-decoration-break: clone;
+  color: black;
+  padding: .1em;
 }
 
 #secondary img, article img, figure, img, img.wp-post-image {
@@ -287,7 +300,7 @@ blockquote.default{
   margin: 0 auto;
   text-align: center;
   position: sticky;
-  top: 0;
+  top: 20px;
 }
 
 .bio-profile-pic {
