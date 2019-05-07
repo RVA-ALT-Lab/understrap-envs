@@ -11,12 +11,16 @@ function remove_menus() {
     remove_menu_page( 'index.php' );                  //Dashboard
     remove_menu_page( 'jetpack' );                    //Jetpack* 
     remove_menu_page( 'themes.php' );                 //Appearance
+    remove_menu_page( 'links.php' );                 //links
     remove_menu_page( 'plugins.php' );                //Plugins
     remove_menu_page( 'users.php' );                  //Users
     remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page( 'edit-comments.php' );        //comments
     remove_menu_page( 'upload.php' );        //media - can always get there through editor?
     remove_menu_page( 'tools.php' ); //export etc
+    // remove_menu_page( 'admin.php?page=wp-fail2ban' ); //fail to ban seems to fail to remove
+    // remove_menu_page( 'admin.php?page=gf_edit_forms' ); //gravity forms admin.php?page=gf_edit_forms - seems to fail to remove
+    //  remove_menu_page( 'edit.php?post_type=page' );    //Pages
   }
 }
 add_action( 'admin_menu', 'remove_menus' );

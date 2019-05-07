@@ -19,6 +19,7 @@ function extras_text_callback() { ?>
 			    	<li><a href="options-reading.php">Privacy Settings</a> - options for controlling who can see your content.</li>
 			    	<li><a href="plugins.php">Plugins</a> - We've already turned on most of the plugins you'll need but just in case.</li>
 			    	<li><a href="widgets.php">Widgets</a> - For footer stuff and sidebar things.</li>
+			    	<li><a href="admin.php?page=gf_edit_forms">Forms</a> - If you want to create a contact form or something like that.</li>
 			   </ul>
 			</div>   
 		</div>	

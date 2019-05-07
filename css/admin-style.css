@@ -15,3 +15,7 @@
 #toplevel_page_portfolio-options {
 	background-color: #0c520e;
 }
+
+#toplevel_page_gf_edit_forms, #toplevel_page_wp-fail2ban {
+	display: none;
+}
