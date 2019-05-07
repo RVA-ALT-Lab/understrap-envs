@@ -76,7 +76,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php if ( 'container' == $container ) : ?>				
 			</div><!-- .container -->
 			<?php endif; ?>
-			<?php echo menu_maker();?>
+			<ul>
+				<?php echo menu_maker();?>
+			</ul>
 		</nav><!-- .site-navigation -->
 
 	</div><!-- #wrapper-navbar end -->
