@@ -285,6 +285,38 @@ function bannerMaker(){
     } 
 }
 
+function menu_maker(){
+  $html = '';
+  $base_url = get_site_url();
+  if(get_field('menu_cats', 'option')){
+    $cats = get_field('menu_cats', 'option');
+    foreach ($cats as $cat) {
+      $html .= '<li><a href="' . $base_url . '/category/' . $cat->slug .'">' . $cat->name . '</a></li>'; 
+    }
+    return $html;
+  } else {
+    popular_categories();//if not set via ACF then show three most popular
+  }
+ 
+}
+
+
+function popular_categories(){
+  $html = '';
+  $base_url = get_site_url();
+  $cats = get_categories( array(
+      'orderby' => 'count',
+      'order'   => 'ASC',
+      'hide_empty' =>  true,      
+  ) );
+  foreach ($cats as $key => $cat) {
+    if ( $key < 3){
+      $html .= '<li><a href="' . $base_url . '/category/' . $cat->slug .'">' . $cat->name . '</a></li>'; 
+    } 
+  }
+    return $html;
+}
+
 //CUSTOMIZER PAGE
 
 $args = array(
@@ -314,3 +346,4 @@ function my_acf_json_save_point( $path ) {
     return $path;
     
 }
+

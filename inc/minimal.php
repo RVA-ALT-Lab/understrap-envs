@@ -16,7 +16,7 @@ function remove_menus() {
     remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page( 'edit-comments.php' );        //comments
     remove_menu_page( 'upload.php' );        //media - can always get there through editor?
-    //remove_menu_page( 'tools.php' ); //left there in case people want to export
+    remove_menu_page( 'tools.php' ); //export etc
   }
 }
 add_action( 'admin_menu', 'remove_menus' );
