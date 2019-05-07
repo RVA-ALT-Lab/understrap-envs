@@ -16,6 +16,7 @@ function remove_menus() {
     remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page( 'edit-comments.php' );        //comments
     remove_menu_page( 'upload.php' );        //media - can always get there through editor?
+    //remove_menu_page( 'tools.php' ); //left there in case people want to export
   }
 }
 add_action( 'admin_menu', 'remove_menus' );
@@ -51,3 +52,14 @@ function load_custom_wp_admin_style() {
         wp_enqueue_style( 'custom_wp_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
+
+add_menu_page('Extras', 'Extras', 'can edit', 'extra-tools', 'extras_text_callback',  'dashicons-chart-pie', 100);
+
+function extras_text_callback(){
+    echo '<h2>Extra Tools</h2>';
+    echo '<ul>';
+    echo '<li><a href="export.php">Export your data</a> - for importing into another WordPress site or backing up.</li>';
+    echo '<li><a href="options-reading.php">Privacy Settings</a> - options for controlling who can see your content.</li>';
+    echo '</ul>';
+}
