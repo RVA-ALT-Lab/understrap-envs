@@ -75,6 +75,11 @@ require get_template_directory() . '/inc/editor.php';
  */
 require get_template_directory() . '/inc/minimal.php';
 
+/**
+ * Extra Tools text
+ */
+require get_template_directory() . '/inc/extras-text.php';
+
 
 
 //ADD FONTS and VCU Brand Bar
