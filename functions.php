@@ -222,10 +222,56 @@ function acf_fetch_cv_skills_data(){
 
 }
 
-function acf_fetch_cv_academic_data(){
+function acf_fetch_cv_academic_major(){
   global $post;
   $html = '';
   $rows = get_field('cv_academics');
+  
+    if($rows)
+    {
+      echo '<div class="majors"><ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<li>' . $row['majors'] . '</li>';
+      }
+
+      echo '</ul></div>';
+    }
+
+}
+
+function acf_fetch_cv_academic_minor(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_academics');
+  // print("<pre>".print_r($rows,true)."</pre>");
+
+  if($rows)
+    {
+      if($rows[0]['minors'])
+        
+        {
+          echo '<div class="minors"><h3>Minor</h3><ul>';
+        }
+
+      foreach($rows as $row)
+      {
+        if($row['minors'])
+          {
+          echo '<li>' . $row['minors'] . '</li>';
+          }
+      }
+
+      echo '</ul></div>';
+    }
+
+}
+
+function acf_fetch_cv_coursework_data(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_coursework');
   
     if($rows)
     {
@@ -233,13 +279,14 @@ function acf_fetch_cv_academic_data(){
 
       foreach($rows as $row)
       {
-        echo '<li>Major(s) = ' . $row['majors'] . '</li>';
+        echo '<li>' . $row['course_number'] . '</li>';
       }
 
       echo '</ul>';
     }
 
 }
+
 
 
 function bannerMaker(){

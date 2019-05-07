@@ -10,7 +10,9 @@
 
 	<header class="entry-header envs-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<h1 class="entry-title">
+			<?php the_title( '<span class="highlight">' , '</span>' ); ?>
+		</h1>
 
 	</header><!-- .entry-header -->
 

@@ -76,7 +76,7 @@
             },
             "collapsed": "field_5ccc725a92c51",
             "min": 1,
-            "max": 1,
+            "max": 0,
             "layout": "table",
             "button_label": "",
             "sub_fields": [
@@ -84,7 +84,7 @@
                     "key": "field_5ccc725a92c51",
                     "label": "Major(s)",
                     "name": "majors",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -93,38 +93,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ccc9fed634ac",
-                            "label": "Add your major(s) here by adding a row for each",
-                            "name": "other_major",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_5ccc72f0dd033",
                     "label": "Minor(s)",
                     "name": "minors",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -133,32 +112,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ccca20815bdd",
-                            "label": "Add your minor(s) here by adding a row for each",
-                            "name": "other_minors",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -332,5 +290,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1556915632
+    "modified": 1557236923
 }
