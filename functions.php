@@ -353,7 +353,7 @@ $args = array(
   'redirect'=>true,
   'position' => '0.001',
   'capability' => 'edit_posts',
-  'icon_url' => 'dashicons-universal-access-alt',
+  'icon_url' => 'dashicons-admin-site',
   );
 
 acf_add_options_page( $args );

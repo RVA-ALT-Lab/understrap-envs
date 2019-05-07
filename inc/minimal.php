@@ -42,11 +42,12 @@ function remove_the_dashboard () {
     while (!$the_user->has_cap($menu[$page][1]) && next($menu))
     $page = key($menu);
     if (preg_match('#wp-admin/?(index.php)?$#',$_SERVER['REQUEST_URI']) && ('index.php' != $menu[$page][2]))
-    wp_redirect(get_option('siteurl') . '/wp-admin/admin.php?page=acf-options-portfolio-options');
+    wp_redirect(get_option('siteurl') . '/wp-admin/admin.php?page=portfolio-options');
 }
 add_action('admin_menu', 'remove_the_dashboard');
 
-//hide bio page from page list
+
+//hide bio page from page list via poorly designed CSS also loads CSS for other admin side things
 function load_custom_wp_admin_style() {
         wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0' );
         wp_enqueue_style( 'custom_wp_admin_css' );
@@ -54,4 +55,4 @@ function load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 
-add_menu_page('Extras', 'Extras', 'upload_files', 'extra-tools', 'extras_text_callback',  'dashicons-chart-pie', 100);
+add_menu_page('Extras', 'Extras', 'upload_files', 'extra-tools', 'extras_text_callback',  'dashicons-hammer', 100);
