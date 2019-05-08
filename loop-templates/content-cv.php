@@ -17,33 +17,52 @@
 	</header><!-- .entry-header -->
 
 	<div class="row entry-content">
-		<div class="col-md-8 entry-content">
-			<div class="envs-prompt"><h2>Interests</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_cv_interests();?></div>
-
-			<div class="envs-prompt"><h2>Skills</h2></div>
-			<div class="envs-response"><?php acf_fetch_cv_skills_data();?></div>
-
-			<div class="envs-prompt"><h2>Academics</h2>
-				<div class="row">
-					<div class="col-md-6 major"><h3>Major</h3><?php echo acf_fetch_cv_academic_major();?></div>
-					<div class="col-md-6 minor"><?php echo acf_fetch_cv_academic_minor();?></div>
-				</div>
-				<div class="row">
-					<div class="col-md-10"><h3>Coursework</h3>
-						<div class="row">
-							<div class="cv-courseinfo">Course Number</div>
-							<div class="cv-courseinfo">Course Title</div>
-							<div class="cv-courseinfo">Semester</div>
-							<div class="cv-courseinfo">Year</div>
-						</div>
-						<div class="row"><?php echo acf_fetch_cv_coursework_data();?></div>
+		<div class="col-md-12 entry-content">
+			
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card bg-light">
+						<div class="envs-prompt"><h2>Interests</h2></div>
+						<div class="envs-response"><?php echo acf_fetch_cv_interests();?></div>
 					</div>
 				</div>
+
+				<div class="col-md-6">
+					<div class="card bg-light">
+						<div class="envs-prompt"><h2>Skills</h2></div>
+						<div class="envs-response "><?php acf_fetch_cv_skills_data();?></div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card bg-light">
+						<div class="envs-prompt"><h2>Work History</h2></div>
+						<div class="envs-response"><?php echo acf_fetch_cv_work_history();?></div>
+					</div>
+				</div>
+				
+				<div class="col-md-8">
+					<div class="card bg-light">
+						<div class="envs-prompt"><h2>Academics</h2>
+							<div class="row">
+								<div class="col-md-6 major"><h4>Major</h4><?php echo acf_fetch_cv_academic_major();?></div>
+								<div class="col-md-6 minor"><?php echo acf_fetch_cv_academic_minor();?></div>
+							</div>
+							<div class="row">
+								<div class="col-md-12"><h4>Coursework</h4></div>
+									<?php echo acf_fetch_cv_coursework_data();?>
+							</div>
+							<div class="row">
+								<div class="envs-response">
+									<h4>Expected Graduation Date</h4>
+										<div class="row"><?php echo acf_fetch_cv_graduation();?></div>
+								</div>
+							</div>
+						</div>
+				</div>
+
 			</div>
-			<div class="envs-prompt"><h2>Work History</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_cv_work_history();?></div>
-			
+
 			<?php the_content(); ?>
 
 		</div><!-- .entry-content -->

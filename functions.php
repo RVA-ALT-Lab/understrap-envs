@@ -263,7 +263,7 @@ function acf_fetch_cv_academic_minor(){
       if($rows[0]['minors'])
         
         {
-          echo '<div class="minors"><h3>Minor</h3><ul>';
+          echo '<div class="minors"><h4>Minor</h4><ul>';
         }
 
       foreach($rows as $row)
@@ -283,21 +283,54 @@ function acf_fetch_cv_coursework_data(){
   global $post;
   $html = '';
   $rows = get_field('cv_coursework');
+  // print("<pre>".print_r($rows,true)."</pre>");
   
     if($rows)
     {
-      echo '<ul>';
+      echo '<div class="cv-courseinfo col-md-12">';
 
       foreach($rows as $row)
       {
-        echo '<li>' . $row['course_number'] . '</li>';
+        echo '<div class="row"><div class="course-number col-md-3">' . $row['course_number'] . '</div> <div class="course-title col-md-3">'. $row['course_title'] . '</div> <div class="course-semester col-md-3">'. $row['course_semester'] . '</div> <div class="course-year col-md-3">'. $row['course_year'] . '</div></div>';
       }
 
-      echo '</ul>';
+      echo '</div>';
     }
 
 }
 
+function acf_fetch_cv_coursework_compress(){
+  global $post;
+  $html = '';
+  $rows = get_field('cv_coursework');
+  print("<pre>".print_r($rows,true)."</pre>");
+  
+    if($rows)
+    {
+      echo '<div class="cv-courseinfo"><ul>';
+
+      foreach($rows as $row)
+      {
+        echo '<div class="chunk"><li>' . $row['course_number'] . '</li>';
+        echo '<li>' . $row['course_title'] . '</li>';
+        echo '<li>' . $row['course_semester'] . '</li>';
+        echo '<li>' . $row['course_year'] . '</li></div>';
+      }
+
+      echo '</ul></div>';
+    }
+}
+
+
+function acf_fetch_cv_graduation(){
+  $html = '';
+  $graduation_date = get_field('expected_graduation_date');
+
+    if( $graduation_date) {      
+      $html = $graduation_date;  
+     return $html;    
+    }
+}
 
 
 function bannerMaker(){
