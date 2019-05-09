@@ -340,12 +340,22 @@ function acf_fetch_cv_graduation(){
 }
 
 
-function acf_fetch_capstone(){
+function acf_fetch_capstone_main(){
   $html = '';
   $cap_content = get_field('cap_content');
 
     if( $cap_content) {      
       $html = $cap_content;  
+     return $html;    
+    }
+}
+
+function acf_fetch_capstone_notes(){
+  $html = '';
+  $cap_notes_aside = get_field('cap_notes_aside');
+
+    if( $cap_notes_aside) {      
+      $html = $cap_notes_aside;  
      return $html;    
     }
 }

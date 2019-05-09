@@ -19,14 +19,14 @@
 	<div class="row entry-content">
 		<div class="col-md-8 entry-content">
 			<div class="envs-prompt"><h2>My Capstone</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_capstone();?></div>
+			<div class="envs-response"><?php echo acf_fetch_capstone_main();?></div>
 			
 			<?php the_content(); ?>
 
 		</div><!-- .entry-content -->
 		<div class="col-md-4 entry-content">
 			<div class="envs-notes-prompt"><h3>Notes</h3></div>
-			<div class="envs-notes-response"><?php echo acf_fetch_capstone();?></div>
+			<div class="envs-notes-response"><?php echo acf_fetch_capstone_notes();?></div>
 		</div>
 	</div>
 
