@@ -36,9 +36,7 @@
 
 		</div><!-- .entry-content -->
 		<div class="col-md-4 entry-content">
-			<div class="bio-profile-box">
-				<img src="
-				<?php echo get_field('profile_picture', 'option')['sizes']['medium'];?>">
+			<div class="bio-profile-box" style="background-image:url('<?php echo get_field('profile_picture', 'option')['sizes']['medium'];?>');"></div>
 			</div>
 		</div>
 	</div>
