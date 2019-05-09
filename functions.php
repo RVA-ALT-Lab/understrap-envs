@@ -340,6 +340,17 @@ function acf_fetch_cv_graduation(){
 }
 
 
+function acf_fetch_capstone(){
+  $html = '';
+  $cap_content = get_field('cap_content');
+
+    if( $cap_content) {      
+      $html = $cap_content;  
+     return $html;    
+    }
+}
+
+
 function bannerMaker(){
 	global $post;
 	 if ( get_the_post_thumbnail_url( $post->ID ) ) {
