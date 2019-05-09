@@ -196,11 +196,18 @@ function acf_fetch_cv_academics(){
 function acf_fetch_cv_work_history(){
   global $post;
   $html = '';
-  $cv_work_history = get_field('cv_work_history');
+  $rows = get_field('cv_work_history');
 
-    if( $cv_work_history) {      
-      $html = $cv_work_history;  
-     return $html;    
+    if($rows)
+    {
+      echo '<div class="cv-work-history col-md-12">';
+
+      foreach($rows as $row)
+      {
+        echo '<div class="work-title-stuff">' . $row['work_institution'] . ' - ' . $row['work_position_title'] . '</div> <div class="work-duites">'. $row['work_responsibilities'] . '</div> <div class="work-dates">' . $row['work_start_date'] . ' – ' . $row['work_end_date'] .'</div>';
+      }
+
+      echo '</div>';
     }
 }
 
@@ -299,27 +306,27 @@ function acf_fetch_cv_coursework_data(){
 
 }
 
-function acf_fetch_cv_coursework_compress(){
-  global $post;
-  $html = '';
-  $rows = get_field('cv_coursework');
-  print("<pre>".print_r($rows,true)."</pre>");
+// function acf_fetch_cv_coursework_compress(){
+//   global $post;
+//   $html = '';
+//   $rows = get_field('cv_coursework');
+//   print("<pre>".print_r($rows,true)."</pre>");
   
-    if($rows)
-    {
-      echo '<div class="cv-courseinfo"><ul>';
+//     if($rows)
+//     {
+//       echo '<div class="cv-courseinfo"><ul>';
 
-      foreach($rows as $row)
-      {
-        echo '<div class="chunk"><li>' . $row['course_number'] . '</li>';
-        echo '<li>' . $row['course_title'] . '</li>';
-        echo '<li>' . $row['course_semester'] . '</li>';
-        echo '<li>' . $row['course_year'] . '</li></div>';
-      }
+//       foreach($rows as $row)
+//       {
+//         echo '<div class="chunk"><li>' . $row['course_number'] . '</li>';
+//         echo '<li>' . $row['course_title'] . '</li>';
+//         echo '<li>' . $row['course_semester'] . '</li>';
+//         echo '<li>' . $row['course_year'] . '</li></div>';
+//       }
 
-      echo '</ul></div>';
-    }
-}
+//       echo '</ul></div>';
+//     }
+// }
 
 
 function acf_fetch_cv_graduation(){

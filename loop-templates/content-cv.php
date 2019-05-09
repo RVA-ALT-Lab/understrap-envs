@@ -43,7 +43,7 @@
 				
 				<div class="col-md-8">
 					<div class="card bg-light">
-						<div class="envs-prompt"><h2>Academics</h2>
+						<div class="envs-response"><h2>Academics</h2>
 							<div class="row">
 								<div class="col-md-6 major"><h4>Major</h4><?php echo acf_fetch_cv_academic_major();?></div>
 								<div class="col-md-6 minor"><?php echo acf_fetch_cv_academic_minor();?></div>
