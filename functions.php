@@ -196,11 +196,18 @@ function acf_fetch_cv_academics(){
 function acf_fetch_cv_work_history(){
   global $post;
   $html = '';
-  $cv_work_history = get_field('cv_work_history');
+  $rows = get_field('cv_work_history');
 
-    if( $cv_work_history) {      
-      $html = $cv_work_history;  
-     return $html;    
+    if($rows)
+    {
+      echo '<div class="cv-work-history col-md-12">';
+
+      foreach($rows as $row)
+      {
+        echo '<div class="work-title-stuff">' . $row['work_institution'] . ' - ' . $row['work_position_title'] . '</div> <div class="work-duites">'. $row['work_responsibilities'] . '</div> <div class="work-dates">' . $row['work_start_date'] . ' – ' . $row['work_end_date'] .'</div>';
+      }
+
+      echo '</div>';
     }
 }
 
@@ -263,7 +270,7 @@ function acf_fetch_cv_academic_minor(){
       if($rows[0]['minors'])
         
         {
-          echo '<div class="minors"><h3>Minor</h3><ul>';
+          echo '<div class="minors"><h4>Minor</h4><ul>';
         }
 
       foreach($rows as $row)
@@ -283,21 +290,75 @@ function acf_fetch_cv_coursework_data(){
   global $post;
   $html = '';
   $rows = get_field('cv_coursework');
+  // print("<pre>".print_r($rows,true)."</pre>");
   
     if($rows)
     {
-      echo '<ul>';
+      echo '<div class="cv-courseinfo col-md-12">';
 
       foreach($rows as $row)
       {
-        echo '<li>' . $row['course_number'] . '</li>';
+        echo '<div class="row"><div class="course-number col-md-3">' . $row['course_number'] . '</div> <div class="course-title col-md-3">'. $row['course_title'] . '</div> <div class="course-semester col-md-3">'. $row['course_semester'] . '</div> <div class="course-year col-md-3">'. $row['course_year'] . '</div></div>';
       }
 
-      echo '</ul>';
+      echo '</div>';
     }
 
 }
 
+// function acf_fetch_cv_coursework_compress(){
+//   global $post;
+//   $html = '';
+//   $rows = get_field('cv_coursework');
+//   print("<pre>".print_r($rows,true)."</pre>");
+  
+//     if($rows)
+//     {
+//       echo '<div class="cv-courseinfo"><ul>';
+
+//       foreach($rows as $row)
+//       {
+//         echo '<div class="chunk"><li>' . $row['course_number'] . '</li>';
+//         echo '<li>' . $row['course_title'] . '</li>';
+//         echo '<li>' . $row['course_semester'] . '</li>';
+//         echo '<li>' . $row['course_year'] . '</li></div>';
+//       }
+
+//       echo '</ul></div>';
+//     }
+// }
+
+
+function acf_fetch_cv_graduation(){
+  $html = '';
+  $graduation_date = get_field('expected_graduation_date');
+
+    if( $graduation_date) {      
+      $html = $graduation_date;  
+     return $html;    
+    }
+}
+
+
+function acf_fetch_capstone_main(){
+  $html = '';
+  $cap_content = get_field('cap_content');
+
+    if( $cap_content) {      
+      $html = $cap_content;  
+     return $html;    
+    }
+}
+
+function acf_fetch_capstone_notes(){
+  $html = '';
+  $cap_notes_aside = get_field('cap_notes_aside');
+
+    if( $cap_notes_aside) {      
+      $html = $cap_notes_aside;  
+     return $html;    
+    }
+}
 
 
 function bannerMaker(){

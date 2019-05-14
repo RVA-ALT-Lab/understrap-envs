@@ -65,13 +65,19 @@ h1, h2, h3, h4, h5 {
   font-family: 'Cantata One', serif;
 }
 
-.highlight {
-  font-family: 'Open Sans',sans-serif;
-  background: #efefef;
-  box-shadow: 10px 0 0 #efefef,-40px 0 0 #efefef;
-  box-decoration-break: clone;
-  color: black;
-  padding: .1em;
+// .highlight {
+//   font-family: 'Open Sans',sans-serif;
+//   background: #efefef;
+//   // box-shadow: 10px 0 0 #efefef,-10px 0 0 #efefef;
+//   // box-decoration-break: clone;
+//   color: black;
+//   padding: .1em;
+// }
+
+.card {
+  padding: 1em;
+  margin-top: 2em;
+  border: none;
 }
 
 #secondary img, article img, figure, img, img.wp-post-image {
@@ -274,14 +280,13 @@ blockquote.default{
 .envs-header {
   padding: 40px;
   background-color: #0C520E;
+  background-image: url(../imgs/envs-sus-bg3.svg);
+  background-size: contain;
+  background-blend-mode: multiply;
   color: white;
   margin-top: -30px;
   margin-bottom: 30px;
   // border-bottom: 4px solid black;
-}
-
-.envs-prompt {
-  font-weight: 700;
 }
 
 .envs-response {
@@ -289,24 +294,80 @@ blockquote.default{
   margin-bottom: 20px;
 }
 
+.envs-notes-response {
+  font-weight: 100;
+  margin-bottom: 20px;
+  font-size: .9em;
+}
+
 //BIO PAGE
+
 .bio-profile-box {
   max-width: 240px;
   min-width: 240px;
   height: 300px;
-  // border: 4px solid black;
+  border: 2px solid black;
   padding-left: 0;
   padding-right: 0;
   margin: 0 auto;
   text-align: center;
   position: sticky;
   top: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
-.bio-profile-pic {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  padding: 4px;
+
+//CV PAGE
+
+.majors, .minors {
+  text-align: left;
 }
 
+.majors ul , .minors > ul {
+  list-style-type: none;
+  text-indent: -2.2em;
+  font-weight: 200;
+}
+
+.cv-courseinfo {
+  padding: 5px;
+  text-align: left;
+}
+
+.course-number, .course-title, .course-semester, .course-year {
+  border-bottom: 1px solid #9da1a5;
+  padding: .3em;
+  margin-bottom: 10px;
+}
+
+.cv-courseinfo li {
+  text-indent: -2.2em;
+}
+
+.work-title-stuff {
+  font-weight: 400;
+}
+
+.work-dates {
+  border-bottom: 1px solid #9da1a5;
+  padding: .3em;
+  margin-bottom: 20px;
+}
+
+
+//CAPSTONE PAGE
+
+
+
+
+//MOBILE
+
+@media (max-width: 768px) {
+
+  .course-number, .course-title, .course-semester {
+    border-style: none;
+  }
+  
+}

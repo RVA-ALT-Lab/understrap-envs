@@ -26,7 +26,7 @@
             "label": "Skills",
             "name": "cv_skills",
             "type": "repeater",
-            "instructions": "In a bulleted list, summarize your skills and proficiencies. What advanced software have you used? What artistic mediums have you worked with? Where have you excelled intellectually–in writing, in presentations, in applied statistics, in field laboratories?\r\nBe sure to create consistency within this list. If you end one bullet point with a period, end them all with one. If you use gerunds to describe one proficiency, don’t switch to conjugated verb tenses in the next.",
+            "instructions": "In a list, summarize your skills and proficiencies. What advanced software have you used? What artistic mediums have you worked with? Where have you excelled intellectually–in writing, in presentations, in applied statistics, in field laboratories?\r\nBe sure to create consistency within this list. If you end one bullet point with a period, end them all with one. If you use gerunds to describe one proficiency, don’t switch to conjugated verb tenses in the next.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -247,8 +247,8 @@
             "key": "field_5ccb3baed7c53",
             "label": "Work History",
             "name": "cv_work_history",
-            "type": "textarea",
-            "instructions": "",
+            "type": "repeater",
+            "instructions": "List your work history from most recent backwards. Provide the institution, the position title, responsibilities, and the approximate dates (month\/year) of your employment. For work that is ongoing, use “present” as the end date.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -256,11 +256,108 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5cd43e4265ce7",
+                    "label": "Institution",
+                    "name": "work_institution",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5cd43e7465ce8",
+                    "label": "Position Title",
+                    "name": "work_position_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5cd43e9d65ce9",
+                    "label": "Responsibilities",
+                    "name": "work_responsibilities",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5cd43ef065cea",
+                    "label": "Start Date",
+                    "name": "work_start_date",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5cd43fbe918fc",
+                    "label": "End Date",
+                    "name": "work_end_date",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -290,5 +387,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1557236923
+    "modified": 1557845907
 }

@@ -18,22 +18,15 @@
 
 	<div class="row entry-content">
 		<div class="col-md-8 entry-content">
-			<div class="envs-prompt"><h2>Who am I, and where am I from?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_one();?></div>
-
-			<div class="envs-prompt"><h2>What does Sustainability mean to me?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_two();?></div>
-
-			<div class="envs-prompt"><h2>How do I plan to innovate a more sustainable future?</h2></div>
-			<div class="envs-response"><?php echo acf_fetch_bio_question_three();?></div>
+			<div class="envs-prompt"><h2>My Capstone</h2></div>
+			<div class="envs-response"><?php echo acf_fetch_capstone_main();?></div>
 			
 			<?php the_content(); ?>
 
 		</div><!-- .entry-content -->
 		<div class="col-md-4 entry-content">
-			<div class="bio-profile-box">
-				<?php echo acf_fetch_bio_profile_picture();?>
-			</div>
+			<div class="envs-notes-prompt"><h3>Notes</h3></div>
+			<div class="envs-notes-response"><?php echo acf_fetch_capstone_notes();?></div>
 		</div>
 	</div>
 
