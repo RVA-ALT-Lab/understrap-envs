@@ -51,6 +51,18 @@ li.active {
 //   z-index: 100;
 // }
 
+#envs-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#envs-menu li {
+  display: inline-block;
+  text-align: center;
+  padding: 0 0 0 12px;
+}
 
 //************************BASIC CONTENT CHOICES************************
 article a {

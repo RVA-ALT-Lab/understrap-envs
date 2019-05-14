@@ -73,12 +73,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-			<?php if ( 'container' == $container ) : ?>				
-			</div><!-- .container -->
-			<?php endif; ?>
-			<ul>
+			<?php if ( 'container' == $container ) : ?>	
+			<ul id="envs-menu">
 				<?php echo menu_maker();?>
-			</ul>
+			</ul>			
+			</div><!-- .container -->
+			<?php endif; ?>			
 		</nav><!-- .site-navigation -->
 
 	</div><!-- #wrapper-navbar end -->
