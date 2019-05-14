@@ -383,7 +383,7 @@ function menu_maker(){
     }
     return $html;
   } else {
-    popular_categories();//if not set via ACF then show three most popular
+    return popular_categories();//if not set via ACF then show three most popular
   }
  
 }
@@ -394,15 +394,15 @@ function popular_categories(){
   $base_url = get_site_url();
   $cats = get_categories( array(
       'orderby' => 'count',
-      'order'   => 'ASC',
+      'order'   => 'DESC',
       'hide_empty' =>  true,      
   ) );
-  foreach ($cats as $key => $cat) {
-    if ( $key < 3){
+  foreach ($cats as $key => $cat) {   
+    if ( $key < 3){      
       $html .= '<li><a href="' . $base_url . '/category/' . $cat->slug .'">' . $cat->name . '</a></li>'; 
     } 
   }
-    return $html;
+   return $html;
 }
 
 //CUSTOMIZER PAGE
