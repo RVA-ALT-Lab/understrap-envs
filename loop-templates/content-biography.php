@@ -45,7 +45,7 @@
 
 		<?php 
 		if (is_user_logged_in() && current_user_can('edit_others_pages')){
-			echo '<a href="wp-admin/admin.php?page=portfolio-options"><span class="edit-link">Edit</a></span>'; 
+			echo '<a class="btn btn-primary" href="wp-admin/admin.php?page=portfolio-options"><span class="edit-link">Edit</a></span>'; 
 		}
 		?>
 
