@@ -43,7 +43,11 @@
 
 	<footer class="entry-footer">
 
-		<?php echo '<a href="wp-admin/admin.php?page=acf-options-portfolio-options"><span class="edit-link">Edit</a></span>'; ?>
+		<?php 
+		if (is_user_logged_in() && current_user_can('edit_others_pages')){
+			echo '<a href="wp-admin/admin.php?page=portfolio-options"><span class="edit-link">Edit</a></span>'; 
+		}
+		?>
 
 	</footer><!-- .entry-footer -->
 
