@@ -26,7 +26,7 @@
             "label": "Skills",
             "name": "cv_skills",
             "type": "repeater",
-            "instructions": "In a bulleted list, summarize your skills and proficiencies. What advanced software have you used? What artistic mediums have you worked with? Where have you excelled intellectually–in writing, in presentations, in applied statistics, in field laboratories?\r\nBe sure to create consistency within this list. If you end one bullet point with a period, end them all with one. If you use gerunds to describe one proficiency, don’t switch to conjugated verb tenses in the next.",
+            "instructions": "In a list, summarize your skills and proficiencies. What advanced software have you used? What artistic mediums have you worked with? Where have you excelled intellectually–in writing, in presentations, in applied statistics, in field laboratories?\r\nBe sure to create consistency within this list. If you end one bullet point with a period, end them all with one. If you use gerunds to describe one proficiency, don’t switch to conjugated verb tenses in the next.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -248,7 +248,7 @@
             "label": "Work History",
             "name": "cv_work_history",
             "type": "repeater",
-            "instructions": "List your work history from most recent backwards. Provide the institution, the position title, responsibilities, and the approximate dates (month\/years) of your employment. For work that is ongoing, use “present” as the end date.",
+            "instructions": "List your work history from most recent backwards. Provide the institution, the position title, responsibilities, and the approximate dates (month\/year) of your employment. For work that is ongoing, use “present” as the end date.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -387,5 +387,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1557415366
+    "modified": 1557845907
 }
