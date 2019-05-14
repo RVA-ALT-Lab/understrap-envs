@@ -21,8 +21,9 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
 			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<?php //get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
+		<div class="col-md-8  offset-md-2 content-area" id="primary">
 			<main class="site-main" id="main">
 
 				<?php if ( have_posts() ) : ?>
@@ -61,7 +62,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 			<?php understrap_pagination(); ?>
 
 		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+		<?php //get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 	</div> <!-- .row -->
 

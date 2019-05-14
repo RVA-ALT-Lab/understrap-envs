@@ -371,7 +371,19 @@ blockquote.default{
 
 //CAPSTONE PAGE
 
+//ARCHIVE/CATEGORY PAGE
+#archive-wrapper article {
+  margin-bottom: 20px;
+}
 
+#archive-wrapper .entry-content {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#archive-wrapper .entry-content p {
+  padding-left: 0;
+}
 
 
 //MOBILE
