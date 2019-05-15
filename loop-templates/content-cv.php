@@ -17,7 +17,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="row entry-content">
-		<div class="col-md-12 entry-content">
+		<div class="col-md-12 entry-content" id="cv-top-card-fix">
 			
 			<div class="row">
 				<div class="col-md-6">
@@ -55,7 +55,7 @@
 							<div class="row">
 								<div class="envs-response">
 									<h4>Expected Graduation Date</h4>
-										<div class="row"><?php echo acf_fetch_cv_graduation();?></div>
+										<div class="row" id="grad-date"><?php echo acf_fetch_cv_graduation();?></div>
 								</div>
 							</div>
 						</div>
