@@ -297,8 +297,42 @@ blockquote.default{
   background-blend-mode: multiply;
   color: white;
   margin-top: -30px;
-  margin-bottom: 30px;
-  // border-bottom: 4px solid black;
+  margin-bottom: 50px;
+  // border-bottom: 2px solid black;
+}
+
+#envs-menu::before {
+  content: "Projects:";
+  text-transform: uppercase;
+  background-color: #fff;
+  padding: 1em;
+  font-size: .9em;
+  // border-radius: 4px;
+}
+
+#envs-menu {
+  background-color: #fff;
+  // padding: 1.5em 1em 1.5em .5em;
+  // border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  text-align: center;
+  // padding: 2px;
+}
+
+#envs-menu li {
+  background-color: #e6e6e6;
+  // padding: 1.5em 1em 1.5em .5em;
+  // border-radius: 4px;
+  padding: 1em;
+  font-size: .9em;
+  // margin: 1px 2px 1px 2px;
+}
+
+.navbar-light .navbar-toggler {
+  margin-bottom: 10px;
 }
 
 .envs-response {
@@ -333,6 +367,18 @@ blockquote.default{
 
 //CV PAGE
 
+#cv-top-card-fix {
+  margin-top: -30px;
+}
+
+#grad-date {
+ padding-left: .3em;
+}
+
+.major, .minor {
+  margin-left: -15px;
+}
+
 .majors, .minors {
   text-align: left;
 }
@@ -350,7 +396,7 @@ blockquote.default{
 
 .course-number, .course-title, .course-semester, .course-year {
   border-bottom: 1px solid #9da1a5;
-  padding: .3em;
+  padding: .3em .3em .3em 0;
   margin-bottom: 10px;
 }
 
