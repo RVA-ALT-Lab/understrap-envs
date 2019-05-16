@@ -15,7 +15,7 @@
 		</h1>
 
 	</header><!-- .entry-header -->	
-	<div class="row entry-content">
+	<div class="row entry-content site-background">
 		<div class="col-md-8 entry-content">
 			<?php if (get_field('bio_question_2', 'option')):?>			
 				<div class="envs-prompt"><h2>Who am I, and where am I from?</h2></div>

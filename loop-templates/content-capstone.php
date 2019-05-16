@@ -16,7 +16,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="row entry-content">
+	<div class="row entry-content site-background">
 		<div class="col-md-8 entry-content">
 			<div class="envs-prompt"><h2>My Capstone</h2></div>
 			<div class="envs-response"><?php echo acf_fetch_capstone_main();?></div>

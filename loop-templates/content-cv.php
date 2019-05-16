@@ -16,33 +16,33 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="row entry-content">
-		<div class="col-md-12 entry-content" id="cv-top-card-fix">
+	<div class="row entry-content site-background">
+		<div class="col-md-12 site-background" id="cv-top-card-fix">
 			
 			<div class="row">
 				<div class="col-md-6">
-					<div class="card bg-light">
+					<div class="card">
 						<div class="envs-prompt"><h2>Interests</h2></div>
 						<div class="envs-response"><?php echo acf_fetch_cv_interests();?></div>
 					</div>
 				</div>
 
 				<div class="col-md-6">
-					<div class="card bg-light">
+					<div class="card">
 						<div class="envs-prompt"><h2>Skills</h2></div>
 						<div class="envs-response "><?php acf_fetch_cv_skills_data();?></div>
 					</div>
 				</div>
 
 				<div class="col-md-4">
-					<div class="card bg-light">
+					<div class="card">
 						<div class="envs-prompt"><h2>Work History</h2></div>
 						<div class="envs-response"><?php echo acf_fetch_cv_work_history();?></div>
 					</div>
 				</div>
 				
 				<div class="col-md-8">
-					<div class="card bg-light">
+					<div class="card">
 						<div class="envs-response"><h2>Academics</h2>
 							<div class="row">
 								<div class="col-md-6 major"><h4>Major</h4><?php echo acf_fetch_cv_academic_major();?></div>

@@ -74,13 +74,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 			<?php if ( 'container' == $container ) : ?>	
-			<ul id="envs-menu">
-				<?php echo menu_maker();?>
-			</ul>			
+				
 			</div><!-- .container -->
 			<?php endif; ?>			
 		</nav><!-- .site-navigation -->
-
+				<ul id="envs-menu">
+					<?php echo menu_maker();?>
+				</ul>			
 	</div><!-- #wrapper-navbar end -->
 
 <?php echo bannerMaker();?>
