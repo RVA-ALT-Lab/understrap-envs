@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-	background-color: $white;
+	// background-color: $white;
 	padding: 1em .4em;
 }
 
@@ -123,6 +123,12 @@ p {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+
+.custom-html-widget a {
+  color: #fff;
+
 }
 
 //BACKGROUND
@@ -462,6 +468,10 @@ blockquote.default{
   padding-left: 0;
 }
 
+//POST PAGE
+#single-wrapper {
+  margin-bottom: 20px;
+}
 
 //MOBILE
 
