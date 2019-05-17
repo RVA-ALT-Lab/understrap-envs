@@ -25,7 +25,6 @@
 
 		</div><!-- .entry-content -->
 		<div class="col-md-4 entry-content site-background">
-			<div class="envs-notes-prompt"><h3>Notes</h3></div>
 			<div class="envs-notes-response"><?php echo acf_fetch_capstone_notes();?></div>
 		</div>
 	</div>

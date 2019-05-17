@@ -26,7 +26,7 @@
             "label": "Notes aside",
             "name": "cap_notes_aside",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "This is an optional area for you to highlight items about your process or anything else you wish to note about your capstone.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -69,5 +69,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1557425398
+    "modified": 1558104662
 }

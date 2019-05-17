@@ -355,6 +355,8 @@ function acf_fetch_capstone_notes(){
   $cap_notes_aside = get_field('cap_notes_aside');
 
     if( $cap_notes_aside) {      
+      
+      echo '<div class="envs-notes-prompt"><h3>Notes</h3></div>';
       $html = $cap_notes_aside;  
      return $html;    
     }
