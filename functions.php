@@ -86,7 +86,7 @@ require get_template_directory() . '/inc/extras-text.php';
 add_action('wp_enqueue_scripts', 'alt_lab_scripts');
 function alt_lab_scripts() {
 	$query_args = array(
-		'family' => 'Roboto:300,400,700|Old+Standard+TT:400,700|Oswald:400,500,700',
+		'family' => 'Open Sans:300,400,700|Playfair Display:400,700|Oswald:400,500,700',
 		'subset' => 'latin,latin-ext',
 	);
 	wp_enqueue_style ( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );

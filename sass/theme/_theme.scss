@@ -75,7 +75,7 @@ body, p {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Cantata One', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 // .highlight {
@@ -99,6 +99,11 @@ h1, h2, h3, h4, h5 {
   padding: 1em;
   margin-top: 2em;
   border: none;
+}
+
+.post-bg {
+  background-color: #fff;
+  padding: 40px;
 }
 
 #secondary img, article img, figure, img, img.wp-post-image {
@@ -356,6 +361,7 @@ blockquote.default{
 
 .entry-title {
   padding-bottom: 40px;
+  padding-left: 5vw;
 }
 
 .navbar-light .navbar-toggler {
