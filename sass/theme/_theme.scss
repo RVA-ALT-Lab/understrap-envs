@@ -362,6 +362,11 @@ blockquote.default{
   text-align: center;
 }
 
+#envs-menu li.active {
+  text-decoration: underline;
+  color: #222;
+}
+
 .entry-title {
   padding-bottom: 40px;
   padding-left: 5vw;

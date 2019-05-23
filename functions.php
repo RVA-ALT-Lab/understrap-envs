@@ -375,13 +375,24 @@ function bannerMaker(){
     } 
 }
 
+function where_am_i($menu_slug){
+  $current_slug = get_queried_object()->slug;
+  // var_dump ($menu_slug);
+  // var_dump ($current_slug);
+  if ($menu_slug == $current_slug){
+    return 'class="active"';
+  }
+}
+
+
 function menu_maker(){
   $html = '';
   $base_url = get_site_url();
+
   if(get_field('menu_cats', 'option')){
     $cats = get_field('menu_cats', 'option');
     foreach ($cats as $cat) {
-      $html .= '<li><a href="' . $base_url . '/category/' . $cat->slug .'">' . $cat->name . '</a></li>'; 
+      $html .= '<li '. where_am_i($cat->slug) .'><a href="' . $base_url . '/category/' . $cat->slug .'">' . $cat->name . '</a></li>'; 
     }
     return $html;
   } else {
