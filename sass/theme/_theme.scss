@@ -17,6 +17,8 @@
 .navbar-brand {
   border-right: 1px solid black;
   padding-right: 20px;
+  font-family: 'Playfair Display', serif;
+  white-space: normal;
 }
 
 //gets rid of round edges on child menu elements
@@ -318,6 +320,7 @@ blockquote.default{
 
 .envs-header {
   padding: 40px;
+  // background: linear-gradient(to bottom right,#294521,#06ce0f);
   background-color: #0C520E;
   background-image: url(../imgs/envs-sus-bg3.svg);
   background-size: contain;
