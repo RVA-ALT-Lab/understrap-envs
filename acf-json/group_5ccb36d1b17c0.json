@@ -358,6 +358,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5d234bdf0bfe9",
+            "label": "CV Uploader",
+            "name": "cv_uploader",
+            "type": "file",
+            "instructions": "Upload a PDF of your own CV here to be downloadable by anyone.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "pdf"
         }
     ],
     "location": [
@@ -387,5 +406,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558052337
+    "modified": 1562596662
 }

@@ -61,6 +61,12 @@
 						</div>
 				</div>
 
+				<div class="col-md-4">
+					
+					<?php echo acf_fetch_cv_uploader();?>
+					
+				</div>
+
 			</div>
 
 			<?php the_content(); ?>
