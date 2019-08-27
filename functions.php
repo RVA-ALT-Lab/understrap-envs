@@ -405,6 +405,10 @@ function popular_categories(){
    return $html;
 }
 
+
+
+//MAKE SURE ACF IS ON
+if( class_exists('acf') ) {
 //CUSTOMIZER PAGE
 
 $args = array(
@@ -421,17 +425,33 @@ acf_add_options_page( $args );
 
 
 
+  //ACF JSON SAVER
+  add_filter('acf/settings/save_json', 'envs_acf_json_save_point');
+   
+  function envs_acf_json_save_point( $path ) {
+      
+      // update path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $path;
+      
+  }
 
-//ACF JSON SAVER
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
- 
-function my_acf_json_save_point( $path ) {
-    
-    // update path
-    $path = get_stylesheet_directory() . '/acf-json';
-    
-    // return
-    return $path;
-    
+
+  add_filter('acf/settings/load_json', 'envs_acf_json_load_point');
+
+  function envs_acf_json_load_point( $paths ) {
+      
+      // remove original path (optional)
+      unset($paths[0]);    
+      
+      // append path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $paths;
+      
+  }
+
 }
-
