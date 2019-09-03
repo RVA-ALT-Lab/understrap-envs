@@ -44,9 +44,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "13"
+                "value": "page-templates\/fullwidthpage-capstone.php"
             }
         ]
     ],
@@ -69,5 +69,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558104662
+    "modified": 1567520767
 }

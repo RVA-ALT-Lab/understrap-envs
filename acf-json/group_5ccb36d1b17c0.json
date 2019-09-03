@@ -382,9 +382,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "17"
+                "value": "page-templates\/fullwidthpage-cv.php"
             }
         ]
     ],
@@ -406,5 +406,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1562596662
+    "modified": 1567520780
 }
