@@ -462,3 +462,27 @@ if (is_plugin_active( 'advanced-custom-fields-pro/acf.php'))  {
   }
 
 }
+
+
+function make_all_the_pages(){  
+
+  $base_pages = ['Biography','Capstone','CV'];
+  foreach ($base_pages as $page) {
+      if(get_page_by_path( strtolower($page) ) === NULL) {
+        $my_post = array(
+          'post_title'    => $page,
+          'post_content'  => '',
+          'post_status'   => 'publish',
+          'post_type'=> 'page',          
+          //'post_template' => 'page-templates/fullwidthpage-'.strtolower($page).'.php',//doesn't seem to work
+          'post_author' => 1 ,
+        );
+        // Insert the post into the database
+        $post_id = wp_insert_post( $my_post );
+        update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage-'.strtolower($page).'.php' );
+      }
+  }
+   
+}
+
+add_action("after_switch_theme", "make_all_the_pages");
