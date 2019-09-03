@@ -81,6 +81,9 @@ require get_template_directory() . '/inc/minimal.php';
 require get_template_directory() . '/inc/extras-text.php';
 
 
+//auto activate ACF PRO
+activate_plugin( 'advanced-custom-fields-pro/acf.php' );
+
 
 //ADD FONTS and VCU Brand Bar
 add_action('wp_enqueue_scripts', 'alt_lab_scripts');
@@ -429,33 +432,55 @@ function popular_categories(){
    return $html;
 }
 
+
+
+//MAKE SURE ACF IS ON
+if( class_exists('acf') ) {
 //CUSTOMIZER PAGE
 
-$args = array(
-  'page_title'=>'Portfolio Options',
-  'menu_title'=>'Portfolio Options',    
-  'menu_slug'=>'portfolio-options',
-  'redirect'=>true,
-  'position' => '0.001',
-  'capability' => 'edit_posts',
-  'icon_url' => 'dashicons-admin-site',
-  );
+//if (is_plugin_active('advanced-custom-fields-pro')){
+  $args = array(
+    'page_title'=>'Portfolio Options',
+    'menu_title'=>'Portfolio Options',    
+    'menu_slug'=>'portfolio-options',
+    'redirect'=>true,
+    'position' => '0.001',
+    'capability' => 'edit_posts',
+    'icon_url' => 'dashicons-admin-site'
+    );
 
-acf_add_options_page( $args );
+  acf_add_options_page( $args );
+//}
 
 
 
+  //ACF JSON SAVER
+  add_filter('acf/settings/save_json', 'envs_acf_json_save_point');
+   
+  function envs_acf_json_save_point( $path ) {
+      
+      // update path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $path;
+      
+  }
 
-//ACF JSON SAVER
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
- 
-function my_acf_json_save_point( $path ) {
-    
-    // update path
-    $path = get_stylesheet_directory() . '/acf-json';
-    
-    // return
-    return $path;
-    
+
+  add_filter('acf/settings/load_json', 'envs_acf_json_load_point');
+
+  function envs_acf_json_load_point( $paths ) {
+      
+      // remove original path (optional)
+      unset($paths[0]);    
+      
+      // append path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $paths;
+      
+  }
+
 }
-
