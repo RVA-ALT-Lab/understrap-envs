@@ -81,6 +81,9 @@ require get_template_directory() . '/inc/minimal.php';
 require get_template_directory() . '/inc/extras-text.php';
 
 
+//auto activate ACF PRO
+activate_plugin( 'advanced-custom-fields-pro/acf.php' );
+
 
 //ADD FONTS and VCU Brand Bar
 add_action('wp_enqueue_scripts', 'alt_lab_scripts');
@@ -411,17 +414,19 @@ function popular_categories(){
 if( class_exists('acf') ) {
 //CUSTOMIZER PAGE
 
-$args = array(
-  'page_title'=>'Portfolio Options',
-  'menu_title'=>'Portfolio Options',    
-  'menu_slug'=>'portfolio-options',
-  'redirect'=>true,
-  'position' => '0.001',
-  'capability' => 'edit_posts',
-  'icon_url' => 'dashicons-admin-site',
-  );
+//if (is_plugin_active('advanced-custom-fields-pro')){
+  $args = array(
+    'page_title'=>'Portfolio Options',
+    'menu_title'=>'Portfolio Options',    
+    'menu_slug'=>'portfolio-options',
+    'redirect'=>true,
+    'position' => '0.001',
+    'capability' => 'edit_posts',
+    'icon_url' => 'dashicons-admin-site'
+    );
 
-acf_add_options_page( $args );
+  acf_add_options_page( $args );
+//}
 
 
 
