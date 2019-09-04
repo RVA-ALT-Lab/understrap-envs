@@ -451,8 +451,68 @@ if( class_exists('acf') ) {
 
   acf_add_options_page( $args );
 //}
+
+//ACF JSON SAVER
+  add_filter('acf/settings/save_json', 'envs_acf_json_save_point');
+   
+  function envs_acf_json_save_point( $path ) {
+      
+      // update path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $path;
+      
+  }
+  add_filter('acf/settings/load_json', 'envs_acf_json_load_point');
+  function envs_acf_json_load_point( $paths ) {
+      
+      // remove original path (optional)
+      unset($paths[0]);    
+      
+      // append path
+      $path = get_stylesheet_directory() . '/acf-json';
+      
+      // return
+      return $paths;
+      
+  }
 }
 
+//MAKE PAGES IF DON'T EXIST
+function make_all_the_pages(){
+    $base_pages = ['Biography','Capstone','CV','Posts'];
+    foreach ($base_pages as $page) {
+        if(get_page_by_path( strtolower($page) ) === NULL) {
+          $my_post = array(
+            'post_title'    => $page,
+            'post_content'  => '',
+            'post_status'   => 'publish',
+            'post_type'=> 'page',          
+            //'post_template' => 'page-templates/fullwidthpage-'.strtolower($page).'.php',//doesn't seem to work
+            'post_author' => 1 ,
+          );
+          // Insert the post into the database and set the Frontpage and Posts page
+          $post_id = wp_insert_post( $my_post );
+          if($page != 'Posts'){
+            update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage-'.strtolower($page).'.php' );
+              if($page === 'Biography') {
+                // var_dump() //Wrap the line below inside the () 
+                update_option( 'page_on_front', $post_id );
+                update_option( 'show_on_front', 'page' );
+              }
+             
+          } else {
+            update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage.php' );
+            update_option( 'page_for_posts', $post_id );
+          }
+        }
+    }
+  }
+  add_action("after_switch_theme", "make_all_the_pages");
+
+
+//ADD THE ACF FIELD GROUPS
 if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
