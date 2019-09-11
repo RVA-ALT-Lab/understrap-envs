@@ -467,7 +467,7 @@ if (is_plugin_active( 'advanced-custom-fields-pro/acf.php'))  {
 function make_all_the_pages(){  
   $owner_email = get_bloginfo('admin_email');
   $owner_id = get_user_by( 'email', $owner_email )->ID;
-  $base_pages = ['Biography','Capstone','CV'];
+  $base_pages = ['Biography','Capstone','CV', 'Posts'];
   foreach ($base_pages as $page) {
       if(get_page_by_path( strtolower($page) ) === NULL) {
         $my_post = array(
@@ -482,6 +482,10 @@ function make_all_the_pages(){
         $post_id = wp_insert_post( $my_post );
         update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage-'.strtolower($page).'.php' );
       }
+      else {
+            update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage.php' );
+            update_option( 'page_for_posts', $post_id );
+          }
   }
    
 }
