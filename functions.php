@@ -465,17 +465,18 @@ if (is_plugin_active( 'advanced-custom-fields-pro/acf.php'))  {
 
 
 function make_all_the_pages(){  
-
+  $owner_email = get_bloginfo('admin_email');
+  $owner_id = get_user_by( 'email', $owner_email )->ID;
   $base_pages = ['Biography','Capstone','CV'];
   foreach ($base_pages as $page) {
       if(get_page_by_path( strtolower($page) ) === NULL) {
         $my_post = array(
+          'post_author' => $owner_id,
           'post_title'    => $page,
           'post_content'  => '',
           'post_status'   => 'publish',
           'post_type'=> 'page',          
           //'post_template' => 'page-templates/fullwidthpage-'.strtolower($page).'.php',//doesn't seem to work
-          'post_author' => 1 ,
         );
         // Insert the post into the database
         $post_id = wp_insert_post( $my_post );
