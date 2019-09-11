@@ -428,7 +428,7 @@ if (is_plugin_active( 'advanced-custom-fields-pro/acf.php'))  {
     );
 
   acf_add_options_page( $args );
-//}
+}
 
 
 
