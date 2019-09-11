@@ -1158,7 +1158,7 @@ if( function_exists('acf_add_local_field_group') ):
   
   acf_add_local_field_group(array(
     'key' => 'group_5d657d45da93b',
-    'title' => 'Use the Portfolio Options menu to edit this information',
+    'title' => '<a href="../wp-admin/admin.php?page=portfolio-options">Use the Portfolio Options menu to edit this information</a>',
     'fields' => false,
     'location' => array(
       array(
