@@ -481,11 +481,13 @@ function envs_portfolio_json($response){
     $cv_id = get_page_by_path('cv');
     $academic = get_field( 'cv_academics', $cv_id);
     $major = envs_json_repeater_tamer($academic, 'majors');
+    $minor = envs_json_repeater_tamer($academic, 'minors');
         
 
     $data['envs']['student_name'] = get_field('name', 'option');
     $data['envs']['graduation_date'] = get_field( 'expected_graduation_date', $cv_id);
     $data['envs']['majors'] = $major;
+    $data['envs']['minors'] = $minor;
     $response->set_data($data);
     return $response;
 }
@@ -499,7 +501,9 @@ function envs_json_repeater_tamer($rows, $sub_field){
 
           foreach($rows as $row)
           {
+            if ($row[$sub_field]){
              array_push($data,$row[$sub_field]);
+            }
           }
          return $data;
         }
