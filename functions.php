@@ -478,16 +478,17 @@ add_action("after_switch_theme", "make_all_the_pages");
 //JSON ADDITIONS
 function envs_portfolio_json($response){
     $data = $response->data;
-    $cv_id = get_page_by_path('cv');
+    $cv_id = get_page_by_path('cv');//get cv page ID
     $academic = get_field( 'cv_academics', $cv_id);
     $major = envs_json_repeater_tamer($academic, 'majors');
     $minor = envs_json_repeater_tamer($academic, 'minors');
         
-
     $data['envs']['student_name'] = get_field('name', 'option');
     $data['envs']['graduation_date'] = get_field( 'expected_graduation_date', $cv_id);
     $data['envs']['majors'] = $major;
     $data['envs']['minors'] = $minor;
+
+    $data['envs']['proj-categories'] = get_field('menu_cats', 'option');
     $response->set_data($data);
     return $response;
 }
