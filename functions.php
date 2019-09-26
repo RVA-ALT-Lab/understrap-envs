@@ -444,7 +444,7 @@ if (is_plugin_active( 'advanced-custom-fields-pro/acf.php'))  {
       
   }
 
-}
+
 
 
 function make_all_the_pages(){  
