@@ -80,6 +80,11 @@ require get_template_directory() . '/inc/minimal.php';
  */
 require get_template_directory() . '/inc/extras-text.php';
 
+/**
+ * ACF Fields
+ */
+require get_template_directory() . '/inc/envs-acf.php';
+
 
 //auto activate ACF PRO
 if (!is_plugin_active( 'advanced-custom-fields-pro/acf.php')){
@@ -311,28 +316,6 @@ function acf_fetch_cv_coursework_data(){
 
 }
 
-// function acf_fetch_cv_coursework_compress(){
-//   global $post;
-//   $html = '';
-//   $rows = get_field('cv_coursework');
-//   print("<pre>".print_r($rows,true)."</pre>");
-  
-//     if($rows)
-//     {
-//       echo '<div class="cv-courseinfo"><ul>';
-
-//       foreach($rows as $row)
-//       {
-//         echo '<div class="chunk"><li>' . $row['course_number'] . '</li>';
-//         echo '<li>' . $row['course_title'] . '</li>';
-//         echo '<li>' . $row['course_semester'] . '</li>';
-//         echo '<li>' . $row['course_year'] . '</li></div>';
-//       }
-
-//       echo '</ul></div>';
-//     }
-// }
-
 
 function acf_fetch_cv_graduation(){
   $html = '';
@@ -486,8 +469,38 @@ function make_all_the_pages(){
             update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage.php' );
             update_option( 'page_for_posts', $post_id );
           }
-  }
-   
+  }   
 }
 
 add_action("after_switch_theme", "make_all_the_pages");
+
+
+//JSON ADDITIONS
+function envs_portfolio_json($response){
+    $data = $response->data;
+    $cv_id = get_page_by_path('cv');
+    $academic = get_field( 'cv_academics', $cv_id);
+    $major = envs_json_repeater_tamer($academic, 'majors');
+        
+
+    $data['envs']['student_name'] = get_field('name', 'option');
+    $data['envs']['graduation_date'] = get_field( 'expected_graduation_date', $cv_id);
+    $data['envs']['majors'] = $major;
+    $response->set_data($data);
+    return $response;
+}
+
+add_filter('rest_index', 'envs_portfolio_json');
+
+
+function envs_json_repeater_tamer($rows, $sub_field){
+  $data = [];
+  if($rows){         
+
+          foreach($rows as $row)
+          {
+             array_push($data,$row[$sub_field]);
+          }
+         return $data;
+        }
+}
