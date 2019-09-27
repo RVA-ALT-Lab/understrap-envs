@@ -487,7 +487,7 @@ function envs_portfolio_json($response){
     $data['envs']['graduation_date'] = get_field( 'expected_graduation_date', $cv_id);
     $data['envs']['majors'] = $major;
     $data['envs']['minors'] = $minor;
-
+    $data['envs']['bio-pic'] = get_field('profile_picture', 'option')['sizes'];
     $data['envs']['proj-categories'] = get_field('menu_cats', 'option');
     $response->set_data($data);
     return $response;
