@@ -95,15 +95,15 @@ if (!is_plugin_active( 'advanced-custom-fields-pro/acf.php')){
 //ADD FONTS and VCU Brand Bar
 add_action('wp_enqueue_scripts', 'alt_lab_scripts');
 function alt_lab_scripts() {
-	$query_args = array(
-		'family' => 'Roboto:300,400,700|Old+Standard+TT:400,700|Oswald:400,500,700',
-		'subset' => 'latin,latin-ext',
-	);
-	wp_enqueue_style ( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+  $query_args = array(
+    'family' => 'Roboto:300,400,700|Old+Standard+TT:400,700|Oswald:400,500,700',
+    'subset' => 'latin,latin-ext',
+  );
+  wp_enqueue_style ( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 
-	wp_enqueue_script( 'vcu_brand_bar', 'https:///branding.vcu.edu/bar/academic/latest.js', array(), '1.1.1', true );
+  wp_enqueue_script( 'vcu_brand_bar', 'https:///branding.vcu.edu/bar/academic/latest.js', array(), '1.1.1', true );
 
-	wp_enqueue_script( 'alt_lab_js', get_template_directory_uri() . '/js/alt-lab.js', array(), '1.1.1', true );
+  wp_enqueue_script( 'alt_lab_js', get_template_directory_uri() . '/js/alt-lab.js', array(), '1.1.1', true );
     }
 
 //add footer widget areas
@@ -361,8 +361,8 @@ function acf_fetch_capstone_notes(){
 
 
 function bannerMaker(){
-	global $post;
-	 if ( get_the_post_thumbnail_url( $post->ID ) ) {
+  global $post;
+   if ( get_the_post_thumbnail_url( $post->ID ) ) {
       //$thumbnail_id = get_post_thumbnail_id( $post->ID );
       $thumb_url = get_the_post_thumbnail_url($post->ID);
       //$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
@@ -484,20 +484,21 @@ function make_all_the_pages(){
             update_post_meta( $post_id, '_wp_page_template', 'page-templates/fullwidthpage.php' );
             update_option( 'page_for_posts', $post_id );
           }
-  }   
+    }   
+  }
 }
 
 add_action("after_switch_theme", "make_all_the_pages");
 
 
-//JSON ADDITIONS
+// //JSON ADDITIONS
 function envs_portfolio_json($response){
     $data = $response->data;
     $cv_id = get_page_by_path('cv');//get cv page ID
     $academic = get_field( 'cv_academics', $cv_id);
     $major = envs_json_repeater_tamer($academic, 'majors');
     $minor = envs_json_repeater_tamer($academic, 'minors');
-        
+
     $data['envs']['student_name'] = get_field('name', 'option');
     $data['envs']['graduation_date'] = get_field( 'expected_graduation_date', $cv_id);
     $data['envs']['majors'] = $major;
@@ -514,9 +515,7 @@ add_filter('rest_index', 'envs_portfolio_json');
 function envs_json_repeater_tamer($rows, $sub_field){
   $data = [];
   if($rows){         
-
-          foreach($rows as $row)
-          {
+          foreach($rows as $row){
             if ($row[$sub_field]){
              array_push($data,$row[$sub_field]);
             }
@@ -525,4 +524,3 @@ function envs_json_repeater_tamer($rows, $sub_field){
         }
 
     }
-  }
