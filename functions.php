@@ -316,6 +316,17 @@ function acf_fetch_cv_coursework_data(){
 
 }
 
+function acf_fetch_cv_uploader(){
+  global $post;
+  $html = '';
+  $exists = get_field('cv_uploader');
+  // print("<pre>".print_r($exists,true)."</pre>");
+
+    if($exists) {
+
+      return '<div class="card"><a href="' . $exists . '">Download my full CV <i class="fa fa-arrow-down" aria-hidden="true"></i></a></div>';
+    }
+}
 
 function acf_fetch_cv_graduation(){
   $html = '';
